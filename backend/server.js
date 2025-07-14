@@ -20,17 +20,23 @@ const app = express();
 // CORS configuration for testing and production
 app.use(cors({
   origin: [
-    'http://localhost:3000', // Frontend dev server
-    'http://localhost:8080', // Added for frontend dev server
-    'https://themabinti-com2.onrender.com/',
+    'http://localhost:3000',
+    'http://localhost:8080',
+    'https://themabinti-com2.onrender.com',  // Removed trailing slash
     'https://themabinti-com2-1.onrender.com',
-    'https://083f15da7f3d.ngrok-free.app', // Ngrok for testing
-    process.env.FRONTEND_URL // Production frontend (set in .env)
+    'https://083f15da7f3d.ngrok-free.app',
+    process.env.FRONTEND_URL
   ].filter(Boolean),
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Added more methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],  // Added more headers
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
+
+// Add explicit OPTIONS handler
+app.options('*', cors());
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
