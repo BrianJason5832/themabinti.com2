@@ -22,6 +22,8 @@ app.use(cors({
   origin: [
     'http://localhost:3000', // Frontend dev server
     'http://localhost:8080', // Added for frontend dev server
+    'https://themabinti-com2.onrender.com/',
+    'https://themabinti-com2-1.onrender.com',
     'https://083f15da7f3d.ngrok-free.app', // Ngrok for testing
     process.env.FRONTEND_URL // Production frontend (set in .env)
   ].filter(Boolean),
