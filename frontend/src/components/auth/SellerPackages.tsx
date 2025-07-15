@@ -103,7 +103,7 @@ const SellerPackages = () => {
     setIsPaying(true);
     try {
       console.log(`Initiating STK Push for ${mpesaNumber}, amount: ${amount}`);
-      const res = await axios.post('https://083f15da7f3d.ngrok-free.app/stkpush', {
+      const res = await axios.post('https://themabinti-com2-7ci5.vercel.app/stkpush', {
         phoneNumber: mpesaNumber,
         amount: amount
       });
@@ -145,7 +145,7 @@ const SellerPackages = () => {
       pollingRef.current = setInterval(async () => {
         try {
           console.log(`Checking payment status for ${mpesaNumber}...`);
-          const res = await axios.get('https://083f15da7f3d.ngrok-free.app/payment-status', {
+          const res = await axios.get('https://themabinti-com2-7ci5.vercel.app/payment-status', {
             params: { phone: mpesaNumber },
           });
           

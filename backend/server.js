@@ -22,7 +22,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000', // Frontend dev server
     'http://localhost:8080', // Added for frontend dev server
-    'https://083f15da7f3d.ngrok-free.app', // Ngrok for testing
+    'https://themabinti-com2-7ci5.vercel.app/', // Ngrok for testing
     process.env.FRONTEND_URL // Production frontend (set in .env)
   ].filter(Boolean),
   methods: ['GET', 'POST'],
