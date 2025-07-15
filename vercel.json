@@ -3,7 +3,7 @@
       {
         "source": "/stkpush",
         "headers": [
-          { "key": "Access-Control-Allow-Origin", "value": "http://localhost:8080" },
+          { "key": "Access-Control-Allow-Origin", "value": "https://themabinti-com2-7ci5.vercel.app" },
           { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" },
           { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
         ]
